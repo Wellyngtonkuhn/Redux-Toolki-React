@@ -6,27 +6,31 @@ import { logout } from "./redux/slices/loginSlice";
 import Counter from "./components/counter/Counter";
 import Sidebar from "./components/rockseat/Sidebar";
 import Video from "./components/rockseat/Video";
+import ApiRest from "./components/apiRest";
 
 function App() {
   const { name, isLogged } = useSelector((state) => state.login);
+
   const dispatch = useDispatch();
 
   return (
     <div className="App-header">
-      Usuário: {name}
-      {name && <button onClick={() => dispatch(logout())}>LogOut</button>}
       {isLogged ? (
         <>
+          <h1>Usuário: {name}</h1>
+          <button onClick={() => dispatch(logout())}>LogOut</button>
           <hr />
           <Counter />
           <hr />
           <Sidebar />
           <Video />
+          <hr />
+          <ApiRest />
         </>
       ) : (
         <>
+          <h1>Digite seu nome para começar...</h1>
           <Login />
-          <h1>Digiti seu nome para começar...</h1>
         </>
       )}
     </div>
