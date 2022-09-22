@@ -6,11 +6,13 @@ import {
   fetchUsersError,
 } from "../redux/slices/asyncRestApi";
 
+const BASE_URL = "https://jsonplaceholder.typicode.com/users";
+
 export const fetchUsers = () => {
   return (dispatch) => {
     dispatch(fetchUsersRequest());
     axios
-      .get("https://jsonplaceholder.typicode.com/users")
+      .get(`${BASE_URL}`)
       .then((response) => {
         const users = response.data;
         dispatch(fetchUsersSucceed(users));
@@ -20,4 +22,3 @@ export const fetchUsers = () => {
       });
   };
 };
-

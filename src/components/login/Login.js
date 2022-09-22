@@ -2,6 +2,8 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { login } from "../../redux/slices/loginSlice";
 
+import "./index.css";
+
 export default function Login() {
   const nameRef = useRef("");
   const dispatch = useDispatch();
@@ -13,14 +15,19 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div className="login">
+      <div style={{ textAlign: "center", padding: "1rem" }}>
+        <h1>Digite seu nome para começar...</h1>
+      </div>
       <form onSubmit={handleLogin}>
         <input
           type="text"
           onChange={(e) => (nameRef.current = e.target.value)}
         />
         <br />
-        <button type="submit">Login</button>
+        <button className="login-button" type="submit">
+          Login
+        </button>
       </form>
     </div>
   );

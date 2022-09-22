@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../../axios";
+import { changeID } from "../../redux/slices/singleJSONID";
 
 export default function ApiRest() {
   const dispatch = useDispatch();
 
   const { error, loading, users } = useSelector((state) => state.api);
-  console.log(`error: ${error}`);
+
 
   useEffect(() => {
     dispatch(fetchUsers());
@@ -21,7 +22,7 @@ export default function ApiRest() {
           users.map((user) => {
             return (
               <li key={user.id}>
-                <a href={``}>{user.name}</a>
+                <button onClick={() => dispatch(changeID(user.id))}>{user.name}</button>
               </li>
             );
           })}
