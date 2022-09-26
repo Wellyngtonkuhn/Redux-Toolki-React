@@ -1,0 +1,15 @@
+.jsonApi-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.jsonApi-section p {
+    padding: 1rem 0;
+}
+
+.list-data li {
+    padding: .2rem 0;
+}

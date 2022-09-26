@@ -8,29 +8,33 @@ export const cursoSlice = createSlice({
     modules: [
       {
         id: 1,
-        title: "Iniciando com React",
+        title: "ReactJS",
         lessons: [
           {
             id: 1,
-            title: "Primeira Aula",
+            title: "Começando com React.js",
+            link: 'pDbcC-xSat4',
           },
           {
             id: 2,
-            title: "Segunda Aula",
+            title: "Primeiro Projeto",
+            link: 'oy4cbqE1_qc',
           },
         ],
       },
       {
         id: 2,
-        title: "Iniciando com Redux",
+        title: "Redux",
         lessons: [
           {
             id: 3,
-            title: "Terceira Aula",
+            title: "Iniciando com Redux",
+            link: 'g-LRqtu9INg',
           },
           {
             id: 4,
-            title: "Quarta Aula",
+            title: "TypeScript com Redux e Redux Saga ",
+            link: 'OXxul6AvXNs',
           },
         ],
       },

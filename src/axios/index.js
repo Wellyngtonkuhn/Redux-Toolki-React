@@ -9,16 +9,13 @@ import {
 const BASE_URL = "https://jsonplaceholder.typicode.com/users";
 
 export const fetchUsers = () => {
-  return (dispatch) => {
+  return async (dispatch) => {
     dispatch(fetchUsersRequest());
-    axios
-      .get(`${BASE_URL}`)
-      .then((response) => {
-        const users = response.data;
-        dispatch(fetchUsersSucceed(users));
-      })
-      .catch((err) => {
-        dispatch(fetchUsersError(err.message));
-      });
+    try {
+      const response = await axios.get(`${BASE_URL}`);
+      dispatch(fetchUsersSucceed(response.data));
+    } catch (error) {
+      dispatch(fetchUsersError(error.message));
+    }
   };
 };

@@ -15,13 +15,13 @@ export default function NavBar() {
       <nav className="navBar">
         <ul>
           <li>
-            <Link to={"/"}>Home</Link>
+            <Link to={"/"}>{`{ JSON } `}/ API</Link>
           </li>
           <li>
             <Link to={"counter"}>Counter</Link>
           </li>
           <li>
-            <Link to={"/"}>Home</Link>
+            <Link to={"cursos"}>Cursos</Link>
           </li>{" "}
           <li>
             <Link to={"/"}>Home</Link>

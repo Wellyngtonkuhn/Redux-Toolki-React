@@ -1,5 +1,15 @@
 # Começando com o projeto
 
+
+ ## Dependências Necessárias
+    React-Router-Dom@v6
+    Axios
+    react-redux
+    redux-thunk
+    reduxjs/toolkit
+    react-youtube
+
+
 No repositório você pode inicializar:
 
 ### `npm start`

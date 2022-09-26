@@ -7,7 +7,7 @@ export default function PriveteRoutes() {
 
   return (
     <>
-      <div>{isLogged ? <Outlet /> : <Login />}</div>
+      <div>{isLogged ? <Outlet /> : <Login/>}</div>
     </>
   );
 }
