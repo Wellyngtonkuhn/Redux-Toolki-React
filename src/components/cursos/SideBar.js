@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleLesson } from "../../redux/slices/cursoSlice";
 
@@ -6,9 +7,14 @@ import "./SideBar.css";
 export default function SideBar() {
   const { modules } = useSelector((state) => state.curso);
   const dispatch = useDispatch();
+
+  const handleLesson = (module, lesson) => {
+    dispatch(toggleLesson({ module, lesson }));
+  };
+
   return (
     <>
-      <div className="sideBar-culumn">
+      <aside className="sideBar-culumn">
         {modules.map((module) => {
           return (
             <div key={module.id}>
@@ -18,11 +24,7 @@ export default function SideBar() {
                   return (
                     <>
                       <li key={lesson.id}>
-                        <a
-                          onClick={() =>
-                            dispatch(toggleLesson({ module, lesson }))
-                          }
-                        >
+                        <a onClick={() => handleLesson(module, lesson)}>
                           {lesson.title}
                         </a>
                       </li>
@@ -33,7 +35,7 @@ export default function SideBar() {
             </div>
           );
         })}
-      </div>
+      </aside>
     </>
   );
 }

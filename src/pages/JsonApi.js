@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../axios";
-import { changeID } from "../redux/slices/singleJSONID";
+import { changeID, showModal } from "../redux/slices/singleJSONID";
+import SingleJSON from "../components/apiRest/SingleJSON";
 
 import "../styles/JsonApi.css";
 
@@ -13,6 +14,11 @@ export default function JsonApi() {
   useEffect(() => {
     dispatch(fetchUsers());
   }, []);
+
+  const handleModal = (id) => {
+    dispatch(changeID(id));
+    dispatch(showModal(true));
+  };
 
   return (
     <>
@@ -28,9 +34,7 @@ export default function JsonApi() {
               users.map((user) => {
                 return (
                   <li key={user.id}>
-                    <a onClick={() => dispatch(changeID(user.id))}>
-                      {user.name}
-                    </a>
+                    <a onClick={() => handleModal(user.id - 1)}>{user.name}</a>
                   </li>
                 );
               })}
@@ -39,6 +43,7 @@ export default function JsonApi() {
             <p>Falha ao carregar os dados, por favor tente mais tarte!</p>
           )}
         </div>
+      <SingleJSON />
       </div>
     </>
   );

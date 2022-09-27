@@ -1,0 +1,32 @@
+.modal-json {
+    display: flex;
+    justify-content: space-between;
+    max-width: 25rem;
+    background-color: rgb(255, 255, 255);
+    color: #282c34;
+    padding: 1rem;
+    border-radius: 15px;
+    line-height: 2.2rem;
+    position: absolute;
+}
+
+.modal-json h3 {
+    font-size: 2rem;
+    padding-bottom: 1.3rem;
+}
+
+.modal-json h4 {
+    font-size: 1.2rem;
+}
+
+.modal-json span {
+    font: 1rem;
+    font-weight: 300;
+}
+
+.modal-close a {
+    color: #282c34;
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding-left: 1rem;
+}

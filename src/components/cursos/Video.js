@@ -1,17 +1,16 @@
 import { useSelector } from "react-redux";
-import Youtube from 'react-youtube'
+import Youtube from "react-youtube";
 
-import './Video.css'
-
+import "./Video.css";
 
 export default function Video() {
   const { activeLesson, activeModule } = useSelector((state) => state.curso);
 
   const videoOpts = {
-    height: '100%',
-    width: '100%',
-  }
-  
+    height: "100%",
+    width: "100%",
+  };
+
   return (
     <>
       <div className="video-column">
@@ -21,7 +20,7 @@ export default function Video() {
         </div>
         <div className="video-section">
           {activeLesson.link && (
-            <Youtube videoId={activeLesson.link} opts={videoOpts}/>
+            <Youtube videoId={activeLesson.link} opts={videoOpts} />
           )}
         </div>
       </div>

@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const singleJSONID = createSlice({
   name: "id",
   initialState: {
-    id: 0,
+    id: null,
+    show: false,
   },
   reducers: {
     changeID(state, action) {
@@ -12,9 +13,15 @@ const singleJSONID = createSlice({
         id: action.payload,
       };
     },
+    showModal(state, action){
+      return {
+        ...state,
+        show: action.payload
+      }
+    },
   },
 });
 
-export const { changeID } = singleJSONID.actions;
+export const { changeID, showModal } = singleJSONID.actions;
 
 export default singleJSONID.reducer;

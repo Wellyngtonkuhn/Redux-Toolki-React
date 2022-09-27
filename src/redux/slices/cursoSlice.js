@@ -3,8 +3,15 @@ import { createSlice } from "@reduxjs/toolkit";
 export const cursoSlice = createSlice({
   name: "curso",
   initialState: {
-    activeModule: {},
-    activeLesson: {},
+    activeModule: {
+      id: 1,
+      title: "ReactJS",
+    },
+    activeLesson: {
+      id: 1,
+      title: "Começando com React.js",
+      link: "pDbcC-xSat4",
+    },
     modules: [
       {
         id: 1,
@@ -13,12 +20,12 @@ export const cursoSlice = createSlice({
           {
             id: 1,
             title: "Começando com React.js",
-            link: 'pDbcC-xSat4',
+            link: "pDbcC-xSat4",
           },
           {
             id: 2,
             title: "Primeiro Projeto",
-            link: 'oy4cbqE1_qc',
+            link: "oy4cbqE1_qc",
           },
         ],
       },
@@ -29,19 +36,19 @@ export const cursoSlice = createSlice({
           {
             id: 3,
             title: "Iniciando com Redux",
-            link: 'g-LRqtu9INg',
+            link: "g-LRqtu9INg",
           },
           {
             id: 4,
             title: "TypeScript com Redux e Redux Saga ",
-            link: 'OXxul6AvXNs',
+            link: "OXxul6AvXNs",
           },
         ],
       },
     ],
   },
   reducers: {
-    toggleLesson(state, {payload}) {
+    toggleLesson(state, { payload }) {
       return {
         ...state,
         activeModule: payload.module,
