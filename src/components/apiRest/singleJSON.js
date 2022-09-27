@@ -10,8 +10,6 @@ export default function SingleJSON() {
 
   const dispatch = useDispatch();
 
-  console.log(show);
-
   return (
     <>
       {show && (

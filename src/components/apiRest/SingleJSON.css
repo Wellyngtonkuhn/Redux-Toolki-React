@@ -8,6 +8,7 @@
     border-radius: 15px;
     line-height: 2.2rem;
     position: absolute;
+    box-shadow: 10px 10px 24px rgb(0 0 0 / 57%)
 }
 
 .modal-json h3 {
