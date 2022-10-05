@@ -23,9 +23,6 @@ export default function NavBar() {
           <li>
             <Link to={"cursos"}>Cursos</Link>
           </li>{" "}
-          <li>
-            <Link to={"/"}>Home</Link>
-          </li>
         </ul>
       </nav>
       {name && (

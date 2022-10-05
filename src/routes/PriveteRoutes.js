@@ -6,8 +6,8 @@ export default function PriveteRoutes() {
   const { isLogged } = useSelector((state) => state.login);
 
   return (
-    <>
-      <div>{isLogged ? <Outlet /> : <Login/>}</div>
-    </>
+      <>
+         {isLogged ? <Outlet /> : <Login/>}
+      </>
   );
 }
