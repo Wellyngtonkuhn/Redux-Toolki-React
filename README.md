@@ -1,5 +1,7 @@
 # Começando com o projeto
 
+ ## Para começar clone este repositório e instale as dependências
+
  ## Dependências Necessárias
     React-Router-Dom@v6
     Axios
